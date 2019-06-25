@@ -1,0 +1,15 @@
+[package]
+name = "qsnap"
+version = "0.1.0"
+authors = ["ubuntu"]
+edition = "2018"
+
+[dependencies]
+clap = "~2.27.0"
+rusoto_core = "0.39.0"
+rusoto_s3 = "0.39.0"
+rusoto_ec2 = "0.39.0"
+if_chain = "1.0.0"
+haikunator = "0.1.2"
+prettytable-rs = "0.8.0"
+spinners = "1.0.0"
