@@ -7,7 +7,13 @@ use std::process;
 
 use super::constants;
 
+// pub fn turn_off_cluster(ip_addresses: &Vec<String>, ec2_client: &Ec2Client) {
+//     // Find instances for each ip address
+//     let ec2_instances = get_instances_by_ip_address(&ip_addresses, &ec2_client);
+// }
+
 pub fn get_volume_type(volume_id: &str, ec2_client: &Ec2Client) -> Option<String> {
+
     let describe_volumes_request_filters = Some(vec![Filter {
         name: Some("volume-id".to_string()),
         values: Some(vec![volume_id.to_string()]),
@@ -28,6 +34,7 @@ pub fn get_volume_type(volume_id: &str, ec2_client: &Ec2Client) -> Option<String
     let volume_type = x.volume_type;
 
     return volume_type;
+
 }
 
 pub fn get_instances_by_ip_address(
@@ -52,6 +59,12 @@ pub fn get_instances_by_ip_address(
     let reservations: Vec<Reservation> = instance_descriptions_result.reservations.unwrap();
 
     let mut ec2_instances: Vec<Instance> = vec![];
+
+    // If no instances are found, exit the program
+    if reservations.len() == 0 {
+        println!("{:#?}", constants::EC2_INSTANCES_NOT_FOUND);
+        process::exit(1);
+    }
 
     for reservation in reservations {
         for instance in reservation.instances.unwrap() {

@@ -1,4 +1,6 @@
 pub const QSNAP_DEFAULT_HELP_MESSAGE: &str = "Use `qsnap -h` for help";
+
+// EC2 instances
 pub const EC2_INSTANCES_NOT_FOUND: &str =
     "No instances found. Make sure all IP addresses are valid.";
 pub const EC2_DESCRIBE_INSTANCE_ERROR: &str = "Error with EC2 instance description request";
@@ -7,13 +9,12 @@ pub const EC2_SNAPSHOTS_NOT_FOUND_ERROR: &str =
     "No snapshots found. Make sure all IP addresses are valid.";
 pub const EC2_CREATE_SNAPSHOT_ERROR: &str = "Error creating a snapshot";
 
+// EC2 volumes
 pub const EC2_VOLUME_DELETE_ERROR: &str = "Error deleting volume";
 pub const EC2_DESCRIBE_VOLUME_ERROR: &str = "Error getting volume information";
-
 pub const EC2_CREATE_VOLUME_ERROR: &str = "Error creating volume from snapshot";
 pub const EC2_ATTACH_VOLUME_ERROR: &str = "Error attaching volume to instance";
 pub const EC2_DEATTACH_VOLUME_ERROR: &str = "Error detatching volume from instance";
-
 pub const EC2_DESCRIBE_VOLUME_STATUS_ERROR: &str = "Error getting volume status";
 
 // Snapshot tags
@@ -31,3 +32,4 @@ pub const VOLUMES_DETATCHED_MESSAGE: &str = "Volumes detached";
 pub const VOLUMES_DELETED_MESSAGE: &str = "Volumes deleted";
 pub const WAITING_FOR_VOLUMES_MESSAGE: &str = "Creating and attaching volumes...";
 pub const CLUSTER_RESTORE_SUCCESS: &str = "Cluster restored";
+pub const UNKNOWN_REGION_ERROR: &str = "Please supply a valid region";
