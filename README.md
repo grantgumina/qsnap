@@ -45,6 +45,7 @@ cargo build
 
 ## Backlog
 * Allow users to select their region (right now qsnap only works in us-west-2)
+* Support public ip addresses as arguments
 * Gracefully handle failures. Too many chances for a bad AWS HTTP request to cause a panic.
 * Parallelize restoration process by multithreading volume create/attach
 * Create unit tests
