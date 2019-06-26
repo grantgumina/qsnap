@@ -43,6 +43,11 @@ Build project and download dependencies
 cargo build
 ```
 
+## Backlog
+* Allow users to select their region (right now qsnap only works in us-west-2)
+* Gracefully handle failures. Too many chances for a bad AWS HTTP request to cause a panic.
+* Parallelize restoration process by multithreading volume create/attach
+
 ## Release History
 * 0.1.0
   * Untested, development only release
